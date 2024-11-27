@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoPAM.Views.PostView"
+             Title="PostView">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button
+                BackgroundColor="Black"
+                WidthRequest="450"
+                HeightRequest="50"
+                Text="Carregar postagens" Command="{Binding getPostsCommand}"/>
+            <CollectionView ItemsSource="{Binding Posts}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="20,0,0,0">
+                            <Label Text= "{Binding Name}" HorizontalOptions="StartAndExpand"  />
+                            <Label Text="{Binding Username}" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Email}" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding Phone}" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Website}" HorizontalOptions="StartAndExpand" Margin="0,0,0,20"/>
+                           
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
